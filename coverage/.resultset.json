@@ -77,8 +77,35 @@
           null,
           null
         ]
+      },
+      "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/spec/transaction_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/lib/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1625509171
+    "timestamp": 1625509945
   }
 }
