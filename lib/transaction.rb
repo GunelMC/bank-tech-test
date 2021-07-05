@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Transaction
   attr_reader :date
 
@@ -7,5 +9,5 @@ class Transaction
 
   def show
     '05/07/2021'
-  end 
+  end
 end

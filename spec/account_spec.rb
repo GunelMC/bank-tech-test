@@ -45,6 +45,5 @@ describe Account do
     it 'throws an error when there is an insufficient balance' do
       expect { subject.withdraw(2000) }.to raise_error('Insufficient funds')
     end
-
   end
 end

@@ -51,7 +51,6 @@
           2,
           null,
           null,
-          null,
           null
         ]
       },
@@ -73,6 +72,7 @@
           null,
           1,
           4,
+          null,
           3,
           null,
           null
@@ -80,6 +80,8 @@
       },
       "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/spec/transaction_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -96,6 +98,8 @@
       },
       "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/lib/transaction.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -110,6 +114,6 @@
         ]
       }
     },
-    "timestamp": 1625510625
+    "timestamp": 1625511148
   }
 }
