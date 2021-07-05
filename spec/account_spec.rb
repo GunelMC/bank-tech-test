@@ -19,9 +19,19 @@ describe Account do
   end
 
   describe '.withdraw' do
+    before(:each) do
+      subject.deposit(1000)
+    end
+    
     it 'decrements the account balance by the amount passed' do
       expect { subject.withdraw(100) }.to change { subject.balance }.by(-100)
-    end 
+    end
+
+    it 'withdrawing 100 then 200 results in a balance of 700' do
+      subject.withdraw(100)
+      subject.withdraw(200)
+      expect(subject.balance).to eq (700)
+    end
   end
 
 end 
