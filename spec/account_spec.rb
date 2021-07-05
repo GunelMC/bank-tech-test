@@ -15,6 +15,12 @@ describe Account do
       subject.deposit(100)
       subject.deposit(400)
       expect(subject.balance).to eq (500)
+    end
+  end
+
+  describe '.withdraw' do
+    it 'decrements the account balance by the amount passed' do
+      expect { subject.withdraw(100) }.to change { subject.balance }.by(-100)
     end 
   end
 
