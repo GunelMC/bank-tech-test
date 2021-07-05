@@ -58,7 +58,7 @@ I want to create bank account with a balance of 0
 ```
 ```
 As a customer,
-So I can save money,
+So I can keep my money safe,
 I want to deposit money into my account 
 ```
 ```
@@ -77,4 +77,16 @@ I want to withdraw only the money that I have
 As a customer,
 So I can see my balance and transaction history,
 I want to print account statement
+```
+
+```
+As a Customer,  
+So I know when each transaction happened,  
+I want transactions on my statement to have the date
+```
+
+```
+As a Customer,  
+Because more recent transactions are more important to me,  
+I want the statement transactions to be ordered chronologically from the latest to the oldest.
 ```
