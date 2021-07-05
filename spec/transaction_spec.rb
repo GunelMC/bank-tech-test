@@ -16,7 +16,7 @@ describe Transaction do
 
   describe '.show' do
     it 'knows the time of the transaction' do
-      expect(subject.show).to eq(date)
+      expect(subject.show).to eq("#{date} || || ||")
     end
   end
 end

@@ -9,7 +9,7 @@ class Transaction
   end
 
   def show
-    format_time
+    "#{format_time} || || ||"
   end
 
   private
