@@ -15,8 +15,13 @@ describe Transaction do
   end 
 
   describe '.show' do
-    it 'knows the time of the transaction' do
-      expect(subject.show).to eq("#{date} || || ||")
+    it 'shows time of the transaction' do
+      expect(subject.show).to eq("#{date} ||  ||  ||  ")
+    end
+
+    it 'shows credit as its second column' do
+      transaction = Transaction.new(credit: 100) 
+      expect(transaction.show).to eq("#{date} || 100 ||  ||  ")
     end
   end
 end

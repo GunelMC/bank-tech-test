@@ -9,13 +9,17 @@ class Transaction
   end
 
   def show
-    "#{format_time} || || ||"
+    "#{format_time} || #{format_credit} ||  ||  "
   end
 
   private
 
   def format_time
     @date.strftime('%d/%m/%Y')
+  end 
+
+  def format_credit
+    return "#{@credit}" if @credit
   end 
 
 end
