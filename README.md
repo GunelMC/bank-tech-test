@@ -50,3 +50,31 @@ date || credit || debit || balance
 | Knows Debit Amount                |                |
 | Knows Balance (after transaction) |                |
 
+## User Stories
+```
+As a customer,
+So I can make a transaction,
+I want to create bank account with a balance of 0
+```
+```
+As a customer,
+So I can save money,
+I want to deposit money into my account 
+```
+```
+As a customer,
+So I can spend money,
+I want to withdraw money from my account 
+```
+
+```
+As a customer,
+So I do not have a negative balance,
+I want to withdraw only the money that I have 
+```
+
+```
+As a customer,
+So I can see my balance and transaction history,
+I want to print account statement
+```
