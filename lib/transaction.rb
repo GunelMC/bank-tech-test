@@ -8,6 +8,13 @@ class Transaction
   end
 
   def show
-    '05/07/2021'
+    format_time
   end
+
+  private
+
+  def format_time
+    @date.strftime('%d/%m/%Y')
+  end 
+
 end
