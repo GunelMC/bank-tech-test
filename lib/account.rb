@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 class Account
-  attr_reader :balance
+  attr_reader :balance, :transaction_history
 
-  def initialize
+  def initialize()
     @balance = 0
+    @transaction_history = []
   end
 
   def deposit(amount)

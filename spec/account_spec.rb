@@ -8,6 +8,11 @@ describe Account do
     expect(subject.balance).to eq 0
   end
 
+  it 'initializes a new account with an empty transaction history' do
+    # this is testing state rather than behaviour for simplicity
+    expect(subject.transaction_history).to eq []
+  end
+
   # second user story
   describe '.deposit' do
     it 'increments the account balance by the amount passed' do
@@ -40,6 +45,6 @@ describe Account do
     it 'throws an error when there is an insufficient balance' do
       expect { subject.withdraw(2000) }.to raise_error('Insufficient funds')
     end
-    
+
   end
 end
