@@ -1,12 +1,50 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
+## Running the program
+### Setup
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+1. Clone this repo.
+3. Install dependencies with:
 
-You'll get to practice your OO design and TDD skills.
+   ```bash
+   bundle
+   ```
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+3. Run tests:
+
+   ```bash
+   rspec
+   ```
+
+4. Launch IRB:
+
+   ```bash
+   irb
+   ```
+
+   Once in IRB.
+
+   ```irb
+   require './lib/account.rb'
+   account = Account.new
+   ```
+
+   ## Gems
+
+Testing and Development gems are:
+
+| Gem               | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| rspec             | Testing framework                                 |
+| rubocop           | Linter, checks for code quality and conventions   |
+| simplecov         | Measures test coverage                            |
+| simplecov-console | Displays measured test coverage when rspec is run |
+
+### Simplecov and Rubocop
+
+Added simplecov and simplecov console gems and configured them in `spec_helper.rb` to check code coverage (better late than never). Also added `coverage` to `.gitignore`.
+
+Linting all files with Rubocop led to minor formatting fixed (also added Rubocop to gems so anyone can run these tests).
 
 ## Specification
 
@@ -30,6 +68,7 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+
 
 ### CRC Cards 
 
@@ -91,3 +130,22 @@ As a Customer,
 Because more recent transactions are more important to me,  
 I want the statement transactions to be ordered chronologically from the latest to the oldest.
 ```
+
+## Approach
+* First I created user stories based on requirements and acceptance criteria
+* Based on user stories I made my planning and structured my code
+
+| Class          | Account      | Transaction  | Printer    |
+| :------------- | :----------- | :----------- | :----------- |
+| Attributes | balance, transaction_class, transaction_history, formatter | date, debit, credit, balance, formatter | account, current_balance |
+| Methods | deposit, withdraw, statement | show | format_row, format_time, format_statement |
+
+* I planned classes based on nouns in my user stories. They are: account, transaction (which summarises deposit and withdrawals), printer. 
+* Account class creates new instances of Transaction when user makes a deposit or a withdrawal. Account stores balance and transaction history. Account also has formatter, which is Printer class injected to it, to delegate formatting and printing of the statement method. 
+* Transaction class stores information about date (defaults to Time.now if no value is passed), debit amount, credit amount, and the resulting balance. The latter three attributes default to nil if no value is passed. 
+* Printer is injected into the Account class to enable the account class to delegate formatting and printing statement. Printer is initialised in Transaction class to format/print a new row of transaction with date, credit, debit and balance as a new row.
+* All unit tests are isolated using mocks and doubles. Time is stubbed to control randomness. 
+* Each RGR cycle is committed using frequent commits and descriptive commit messages. 
+* Included an integration test to test functionality of the program. 
+* Made an assumption that customer cannot withdraw money unless there is enough money in their account and added this edge case in the project. 
+* I used TDD throughout the entire process. Test coverage is 100%. 
