@@ -11,21 +11,17 @@ class Transaction
   end
 
   def show
-    "#{format_time} || #{format_credit} || #{format_debit} || #{@balance} "
+    "#{format_time} || #{format(@credit)} || #{format(@debit)} || #{@balance} "
   end
 
   private
 
+  def format(item)
+    "#{item}" if item
+  end 
+
   def format_time
     @date.strftime('%d/%m/%Y')
-  end 
-
-  def format_credit
-    return "#{@credit}" if @credit
-  end 
-
-  def format_debit
-    return "#{@debit}" if @debit
   end 
 
 end
