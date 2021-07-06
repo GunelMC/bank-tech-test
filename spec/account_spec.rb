@@ -55,5 +55,10 @@ describe Account do
     it 'throws an error when there is an insufficient balance' do
       expect { subject.withdraw(2000) }.to raise_error('Insufficient funds')
     end
+
+    it 'calls for a new transaction with the debit amount and resulting balance' do
+      expect(transaction_class_double).to receive(:new).with(debit:100, balance: 900)
+      subject.withdraw(100)
+    end
   end
 end

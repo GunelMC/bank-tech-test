@@ -18,5 +18,6 @@ class Account
     raise 'Insufficient funds' if @balance < amount
 
     @balance -= amount
+    transaction = @transaction_class.new(debit: amount, balance: @balance)
   end
 end
