@@ -76,7 +76,7 @@ date || credit || debit || balance
 |---------------------------|----------------|
 | Reponsibilities:          | Collaborators: |
 | Knows Balance             | Transaction    |
-| Knows transaction history |                |
+| Knows transaction history |    Printer     |
 | Can Deposit               |                |
 | Can Withdraw              |                |
 | Can Print statement       |                |
@@ -84,10 +84,17 @@ date || credit || debit || balance
 | Class Name:                       | Transaction    |
 |-----------------------------------|----------------|
 | Reponsibilities:                  | Collaborators: |
-| Knows Date                        |                |
+| Knows Date                        |     Printer    |
 | Knows Credit Amount               |                |
 | Knows Debit Amount                |                |
 | Knows Balance (after transaction) |                |
+
+| Class Name:                       | Printer        |
+|-----------------------------------|----------------|
+| Reponsibilities:                  | Collaborators: |
+| Fornats Time                      |                |
+| Formats transaction row           |                |
+| Formats statement                 |                |
 
 ## User Stories
 ```
