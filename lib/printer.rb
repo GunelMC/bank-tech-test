@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Printer
+  STATEMENT_HEADER = "date || credit || debit || balance\n"
   def format_row(transaction)
     "#{format_time(transaction.date)} || #{format(transaction.credit)}|| #{format(transaction.debit)}|| #{format_balance(transaction.balance)}"
   end
@@ -10,12 +11,11 @@ class Printer
   end
 
   def format_statement(transaction_history)
-    header = "date || credit || debit || balance\n"
     statementRows = transaction_history.sort_by(&:date).reverse.map do |transaction|
       format_row(transaction)
     end
 
-    final_statement = header + statementRows.join("\n")
+    final_statement = STATEMENT_HEADER + statementRows.join("\n")
     puts final_statement
     final_statement
   end 
