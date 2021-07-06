@@ -78,6 +78,38 @@
           null
         ]
       },
+      "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/spec/printer_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/lib/printer.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/spec/transaction_spec.rb": {
         "lines": [
           null,
@@ -132,6 +164,7 @@
           6,
           6,
           6,
+          6,
           null,
           null,
           1,
@@ -152,6 +185,6 @@
         ]
       }
     },
-    "timestamp": 1625557930
+    "timestamp": 1625559638
   }
 }

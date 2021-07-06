@@ -3,11 +3,12 @@
 class Transaction
   attr_reader :date, :credit
 
-  def initialize(date: Time.now, credit: nil, debit:nil, balance:nil)
+  def initialize(date: Time.now, credit: nil, debit:nil, balance:nil, formatter:nil)
     @date = date
     @credit = credit
     @debit = debit
     @balance = balance
+    @formatter = formatter
   end
 
   def show
@@ -20,7 +21,7 @@ class Transaction
     "#{item}" if item
   end 
 
-  def format_time
+  def format_time()
     @date.strftime('%d/%m/%Y')
   end 
 
