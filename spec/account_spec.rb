@@ -5,8 +5,9 @@ require 'account'
 describe Account do
   let(:transaction_double) { double(:transaction_double, show: nil) }
   let(:transaction_class_double) { double(:transaction_class_double, new: transaction_double ) }
+  let(:printer_double) { double(:printer_double, format_statement: nil) }
 
-  subject { Account.new(transaction_class_double) }
+  subject { Account.new(transaction_class_double, printer_double ) }
   
   it 'initializes a new account with balance of 0' do
     # this is testing state rather than behaviour for simplicity
@@ -65,7 +66,7 @@ describe Account do
   describe '.statement' do
     it "calls transaction.show method" do
       subject.deposit(100)
-      expect(transaction_double).to receive(:show).exactly(1).time
+      expect(printer_double).to receive(:format_statement).with([transaction_double])
       subject.statement
     end 
 

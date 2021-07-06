@@ -1,12 +1,15 @@
 # frozen_string_literal: true
+require_relative "./printer.rb"
+require_relative "./transaction.rb"
 
 class Account
   attr_reader :balance, :transaction_history
 
-  def initialize(transaction_class = Transaction)
+  def initialize(transaction_class = Transaction, formatter = Printer.new)
     @balance = 0
     @transaction_class = transaction_class
     @transaction_history = []
+    @formatter = formatter
   end
 
   def deposit(amount)
@@ -22,8 +25,6 @@ class Account
   end
 
   def statement
-    @transaction_history.map do |transaction|
-      transaction.show
-    end 
+    @formatter.format_statement(@transaction_history)
   end
 end

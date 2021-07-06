@@ -3,7 +3,7 @@
 require_relative './printer'
 
 class Transaction
-  attr_reader :date, :credit
+  attr_reader :date, :credit, :debit, :balance
 
   def initialize(date: Time.now, credit: nil, debit: nil, balance: nil, formatter: Printer.new)
     @date = date
