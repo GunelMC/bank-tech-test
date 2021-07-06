@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/spec/account_feature_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -326,6 +328,6 @@
         ]
       }
     },
-    "timestamp": 1625598578
+    "timestamp": 1625599224
   }
 }

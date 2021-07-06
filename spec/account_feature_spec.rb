@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe 'Account Feature Test' do

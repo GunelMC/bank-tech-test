@@ -15,7 +15,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    add_deposit_transaction(credit:amount, balance: @balance)
+    add_deposit_transaction(credit: amount, balance: @balance)
     print_deposit_message(amount, @balance)
   end
 
@@ -33,19 +33,19 @@ class Account
 
   private
 
-  def add_deposit_transaction(credit: nil, balance: nil) 
+  def add_deposit_transaction(credit: nil, balance: nil)
     @transaction_history.unshift(@transaction_class.new(credit: credit, balance: balance))
   end
 
-  def add_withdraw_transaction(debit: nil, balance: nil) 
+  def add_withdraw_transaction(debit: nil, balance: nil)
     @transaction_history.unshift(@transaction_class.new(debit: debit, balance: balance))
-  end 
+  end
 
-  def print_deposit_message(amount, balance)
+  def print_deposit_message(amount, _balance)
     "#{amount} is deposited. Current balance: #{@balance}"
   end
-  
-  def print_withdraw_message(amount, balance)
-  "#{amount} is withdrawn. Current balance: #{@balance}"
+
+  def print_withdraw_message(amount, _balance)
+    "#{amount} is withdrawn. Current balance: #{@balance}"
   end
 end
