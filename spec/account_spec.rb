@@ -3,6 +3,11 @@
 require 'account'
 
 describe Account do
+  let(:transaction_double) { double(:transaction_double, show: nil) }
+  let(:transaction_class_double) { double(:transaction_class_double, new: transaction_double ) }
+
+  subject { Account.new(transaction_class_double) }
+  
   it 'initializes a new account with balance of 0' do
     # this is testing state rather than behaviour for simplicity
     expect(subject.balance).to eq 0
@@ -23,6 +28,11 @@ describe Account do
       subject.deposit(100)
       subject.deposit(400)
       expect(subject.balance).to eq(500)
+    end
+
+    it 'calls for a new transaction with the credit amount and resulting balance' do
+      expect(transaction_class_double).to receive(:new).with(credit:100, balance: 100)
+      subject.deposit(100)
     end
   end
 
