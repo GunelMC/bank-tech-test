@@ -20,11 +20,11 @@ describe 'Account Feature Test' do
     subject.withdraw(500)
 
     statement =
-      "date || credit || debit || balance
+"date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00"
 
-    expect(subject.statement).to eq statement
+    expect{ subject.statement }.to output(/#{statement}/m).to_stdout
   end
 end
