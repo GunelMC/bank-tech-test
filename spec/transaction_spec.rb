@@ -16,6 +16,11 @@ describe Transaction do
     expect(transaction.credit).to eq(100)
   end
 
+  it 'is initialised with Time.now as the default date value' do
+    allow(Time).to receive(:now).and_return(date)
+    expect(subject.date).to eq(date)
+  end
+
   describe '.show' do
     it 'calls formatter.format_row' do
       expect(printer_double).to receive(:format_row).with(transaction)
