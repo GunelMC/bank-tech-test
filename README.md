@@ -93,8 +93,8 @@ date || credit || debit || balance
 |-----------------------------------|----------------|
 | Reponsibilities:                  | Collaborators: |
 | Formats Time                      |                |
-| Formats transaction row           |                |
-| Formats statement                 |                |
+| Formats Transaction Row           |                |
+| Formats Statement                 |                |
 
 ## User Stories
 ```
