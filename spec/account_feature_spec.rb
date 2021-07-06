@@ -3,7 +3,7 @@
 require 'account'
 
 describe 'Account Feature Test' do
-  it 'deposit 1000, 2000 then withdraw 500' do
+  it 'prints details of transactions in reversed chronological order' do
     time_one = Time.new(2012, 0o1, 10, 12)
     time_two = Time.new(2012, 0o1, 13, 12)
     time_three = Time.new(2012, 0o1, 14, 12)
@@ -27,4 +27,6 @@ describe 'Account Feature Test' do
 
     expect{ subject.statement }.to output(/#{statement}/m).to_stdout
   end
+
+  it 
 end
