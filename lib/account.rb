@@ -23,6 +23,7 @@ class Account
 
     @balance -= amount
     @transaction_history.unshift(@transaction_class.new(debit: amount, balance: @balance))
+    return "#{amount} is withdrawn. Current balance: #{@balance}"
   end
 
   def statement

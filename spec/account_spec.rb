@@ -66,6 +66,10 @@ describe Account do
       expect(transaction_class_double).to receive(:new).with(debit:100, balance: 900)
       subject.withdraw(100)
     end
+    
+    it 'returns confirmation message with debitted amount and resulting balance' do
+      expect(subject.withdraw(100)).to eq("100 is withdrawn. Current balance: 900")
+    end
   end
 
   describe '.statement' do
