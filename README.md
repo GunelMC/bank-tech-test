@@ -140,7 +140,7 @@ I want the statement transactions to be ordered chronologically from the latest 
 
 | Class          | Account      | Transaction  | Printer    |
 | :------------- | :----------- | :----------- | :----------- |
-| Attributes | balance, transaction_class, transaction_history, formatter | date, debit, credit, balance, formatter | account, current_balance |
+| Attributes | balance, transaction_class, transaction_history, formatter | date, debit, credit, balance, formatter | |
 | Methods | deposit, withdraw, statement | show | format_row, format_time, format_statement |
 
 * I planned classes based on nouns in my user stories. They are: account, transaction (which summarises deposit and withdrawals), printer. 
