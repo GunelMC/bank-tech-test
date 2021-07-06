@@ -4,19 +4,19 @@ require 'account'
 
 describe 'Account Feature Test' do
   it 'deposit 1000, 2000 then withdraw 500' do
-    time1 = Time.new(2012, 0o1, 10, 12)
-    time2 = Time.new(2012, 0o1, 13, 12)
-    time3 = Time.new(2012, 0o1, 14, 12)
+    time_one = Time.new(2012, 0o1, 10, 12)
+    time_two = Time.new(2012, 0o1, 13, 12)
+    time_three = Time.new(2012, 0o1, 14, 12)
 
     subject = Account.new
 
-    allow(Time).to receive(:now).and_return(time1)
+    allow(Time).to receive(:now).and_return(time_one)
     subject.deposit(1000)
 
-    allow(Time).to receive(:now).and_return(time2)
+    allow(Time).to receive(:now).and_return(time_two)
     subject.deposit(2000)
 
-    allow(Time).to receive(:now).and_return(time3)
+    allow(Time).to receive(:now).and_return(time_three)
     subject.withdraw(500)
 
     statement =
