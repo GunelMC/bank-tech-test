@@ -131,6 +131,9 @@ Because more recent transactions are more important to me,
 I want the statement transactions to be ordered chronologically from the latest to the oldest.
 ```
 
+## Screen Preview
+![Screen preview](images/bank_test_screenshot.png)
+
 ## Approach
 * First I created user stories based on requirements and acceptance criteria
 * Based on user stories I made my planning and structured my code
