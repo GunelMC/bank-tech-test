@@ -92,7 +92,7 @@ date || credit || debit || balance
 | Class Name:                       | Printer        |
 |-----------------------------------|----------------|
 | Reponsibilities:                  | Collaborators: |
-| Fornats Time                      |                |
+| Formats Time                      |                |
 | Formats transaction row           |                |
 | Formats statement                 |                |
 
