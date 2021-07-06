@@ -1,17 +1,17 @@
-class Printer
+# frozen_string_literal: true
 
- def format_row(transaction)
+class Printer
+  def format_row(transaction)
     "#{format_time(transaction.date)} || #{format(transaction.credit)} || #{format(transaction.debit)} || #{transaction.balance}"
   end
 
   def format_time(date)
     date.strftime('%d/%m/%Y')
-  end 
+  end
 
-private 
+  private
 
-def format(item)
-  "#{item}" if item
-end 
-
+  def format(item)
+    item&.to_s
+  end
 end
