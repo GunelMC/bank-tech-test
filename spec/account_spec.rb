@@ -35,6 +35,11 @@ describe Account do
       expect(transaction_class_double).to receive(:new).with(credit:100, balance: 100)
       subject.deposit(100)
     end
+
+    it 'returns confirmation message with debitted amount and resulting balance' do
+      expect(subject.deposit(100)).to eq("100 is deposited. Current balance: 100")
+    end
+
   end
 
   # third user story

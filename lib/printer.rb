@@ -15,7 +15,9 @@ class Printer
       format_row(transaction)
     end
 
-    header + statementRows.join("\n")
+    final_statement = header + statementRows.join("\n")
+    puts final_statement
+    final_statement
   end 
 
   private

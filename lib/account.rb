@@ -15,6 +15,7 @@ class Account
   def deposit(amount)
     @balance += amount
     @transaction_history.unshift(@transaction_class.new(credit: amount, balance: @balance))
+    return "#{amount} is deposited. Current balance: #{@balance}"
   end
 
   def withdraw(amount)
