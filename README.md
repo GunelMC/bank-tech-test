@@ -152,10 +152,13 @@ I want the statement transactions to be ordered chronologically from the latest 
 
 * I planned classes based on nouns in my user stories. They are: account, transaction (which summarises deposit and withdrawals), printer. 
 * Account class creates new instances of Transaction when user makes a deposit or a withdrawal. Account stores balance and transaction history. Account also has formatter, which is Printer class injected to it, to delegate formatting and printing of the statement method. 
+* Also, initially I was testing state of @balance rather than behaviour. Reworked tests to test whether deposit and withdraw methods were showing expected behaviour, i.e. aside from changing the balance, whether they were adding the debit or credit transaction into the Account's transaction history.
+* I refactored Account's deposit and withdraw methods extracting logic using private helper methods.
 * Transaction class stores information about date (defaults to Time.now if no value is passed), debit amount, credit amount, and the resulting balance. The latter three attributes default to nil if no value is passed. 
 * Printer is injected into the Account class to enable the account class to delegate formatting and printing statement. Printer is initialised in Transaction class to format/print a new row of transaction with date, credit, debit and balance as a new row.
 * All unit tests are isolated using mocks and doubles. Time is stubbed to control randomness. 
 * Each RGR cycle is committed using frequent commits and descriptive commit messages. 
 * Included an integration test to test functionality of the program. 
 * Made an assumption that customer cannot withdraw money unless there is enough money in their account and added this edge case in the project. 
+* Account initialise method sets @balance with new constant STARTING_BALANCE as 0.
 * I used TDD throughout the entire process. Test coverage is 100%. 
