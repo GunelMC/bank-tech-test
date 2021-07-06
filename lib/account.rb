@@ -11,13 +11,13 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    transaction = @transaction_class.new(credit: amount, balance: @balance)
+    @transaction_history.unshift(@transaction_class.new(credit: amount, balance: @balance))
   end
 
   def withdraw(amount)
     raise 'Insufficient funds' if @balance < amount
 
     @balance -= amount
-    transaction = @transaction_class.new(debit: amount, balance: @balance)
+    @transaction_history.unshift(@transaction_class.new(debit: amount, balance: @balance))
   end
 end
