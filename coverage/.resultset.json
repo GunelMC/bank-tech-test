@@ -90,12 +90,22 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
       "/Users/gunelmehdiyeva-chau/Projects/week_10/bank_tech_test/lib/printer.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -185,6 +195,6 @@
         ]
       }
     },
-    "timestamp": 1625559638
+    "timestamp": 1625560000
   }
 }

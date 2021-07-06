@@ -7,5 +7,11 @@ describe Printer do
     it "formats the transaction row" do
       expect(subject.format_row(transaction)).to eq "15/03/2021 || 300 || 100 || 200"
     end
+
+    it "formats the transaction time" do
+      date = Time.new(2021, 03, 15)
+      expect(subject.format_time(date)).to eq "15/03/2021"
+    end
+
   end  
 end 
