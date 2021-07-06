@@ -3,11 +3,15 @@
 require 'printer'
 
 describe Printer do
-  let(:transaction) { double(:transaction, date: Time.new(2021, 03, 15), credit: 300, debit: 100, balance: 200) }
+  let(:transaction) { double(:transaction, date: Time.new(2021, 0o3, 15), credit: 300, debit: 100, balance: 200) }
 
-  let(:transaction1) { double(:transaction_1, date: Time.new(2012, 01, 10), credit: 1000.00, debit: nil, balance: 1000.00) }
-  let(:transaction2) { double(:transaction_2, date: Time.new(2012, 01, 13), credit: 2000.00, debit: nil, balance: 3000) }
-  let(:transaction3) { double(:transaction_3, date: Time.new(2012, 01, 14), credit: nil, debit: 500, balance: 2500) }
+  let(:transaction1) do
+    double(:transaction_1, date: Time.new(2012, 0o1, 10), credit: 1000.00, debit: nil, balance: 1000.00)
+  end
+  let(:transaction2) do
+    double(:transaction_2, date: Time.new(2012, 0o1, 13), credit: 2000.00, debit: nil, balance: 3000)
+  end
+  let(:transaction3) { double(:transaction_3, date: Time.new(2012, 0o1, 14), credit: nil, debit: 500, balance: 2500) }
 
   describe '.format_row' do
     it 'formats the transaction row' do
@@ -21,16 +25,15 @@ describe Printer do
 
   describe '.format_statement' do
     it 'formats the account statement' do
+      transaction_history = [transaction1, transaction2, transaction3]
 
-    transaction_history = [transaction1, transaction2, transaction3]
-
-    statement =
-"date || credit || debit || balance
+      statement =
+        "date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00"
 
-    expect(subject.format_statement(transaction_history)).to eq(statement)
-    end 
+      expect(subject.format_statement(transaction_history)).to eq(statement)
+    end
   end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-require_relative "./printer.rb"
-require_relative "./transaction.rb"
+
+require_relative './printer'
+require_relative './transaction'
 
 class Account
   attr_reader :balance, :transaction_history
@@ -15,7 +16,7 @@ class Account
   def deposit(amount)
     @balance += amount
     @transaction_history.unshift(@transaction_class.new(credit: amount, balance: @balance))
-    return "#{amount} is deposited. Current balance: #{@balance}"
+    "#{amount} is deposited. Current balance: #{@balance}"
   end
 
   def withdraw(amount)
@@ -23,7 +24,7 @@ class Account
 
     @balance -= amount
     @transaction_history.unshift(@transaction_class.new(debit: amount, balance: @balance))
-    return "#{amount} is withdrawn. Current balance: #{@balance}"
+    "#{amount} is withdrawn. Current balance: #{@balance}"
   end
 
   def statement
