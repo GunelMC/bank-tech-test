@@ -33,7 +33,7 @@ describe Printer do
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00"
 
-      expect(subject.format_statement(transaction_history)).to eq(statement)
+      expect{ subject.format_statement(transaction_history)}.to output(/#{statement}/m).to_stdout
     end
   end
 end
