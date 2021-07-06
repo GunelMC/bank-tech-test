@@ -27,6 +27,5 @@ describe 'Account Feature Test' do
 
     expect{ subject.statement }.to output(/#{statement}/m).to_stdout
   end
-
-  it 
+  
 end

@@ -4,10 +4,12 @@ require_relative './printer'
 require_relative './transaction'
 
 class Account
+
+  STARTING_BALANCE = 0
   attr_reader :balance, :transaction_history
 
   def initialize(transaction_class = Transaction, formatter = Printer.new)
-    @balance = 0
+    @balance = STARTING_BALANCE
     @transaction_class = transaction_class
     @transaction_history = []
     @formatter = formatter
