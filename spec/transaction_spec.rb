@@ -23,5 +23,10 @@ describe Transaction do
       transaction = Transaction.new(credit: 100) 
       expect(transaction.show).to eq("#{date} || 100 ||  ||  ")
     end
+
+    it 'shows debit as its third column' do
+      transaction = Transaction.new(debit: 100) 
+      expect(transaction.show).to eq("#{date} ||  || 100 ||  ")
+    end
   end
 end

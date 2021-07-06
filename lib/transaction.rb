@@ -3,13 +3,14 @@
 class Transaction
   attr_reader :date, :credit
 
-  def initialize(date: Time.now, credit: nil)
+  def initialize(date: Time.now, credit: nil, debit:nil)
     @date = date
     @credit = credit
+    @debit = debit
   end
 
   def show
-    "#{format_time} || #{format_credit} ||  ||  "
+    "#{format_time} || #{format_credit} || #{format_debit} ||  "
   end
 
   private
@@ -20,6 +21,10 @@ class Transaction
 
   def format_credit
     return "#{@credit}" if @credit
+  end 
+
+  def format_debit
+    return "#{@debit}" if @debit
   end 
 
 end
