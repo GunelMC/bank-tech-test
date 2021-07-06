@@ -11,7 +11,7 @@ describe Printer do
 
   describe '.format_row' do
     it 'formats the transaction row' do
-      expect(subject.format_row(transaction)).to eq '15/03/2021 || 300.00 || 100.00 || 200.00 '
+      expect(subject.format_row(transaction)).to eq '15/03/2021 || 300.00 || 100.00 || 200.00'
     end
 
     it 'formats the transaction time' do
@@ -26,9 +26,9 @@ describe Printer do
 
     statement =
 "date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00 
-13/01/2012 || 2000.00 || || 3000.00 
-10/01/2012 || 1000.00 || || 1000.00 "
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00"
 
     expect(subject.format_statement(transaction_history)).to eq(statement)
     end 

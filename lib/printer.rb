@@ -2,7 +2,7 @@
 
 class Printer
   def format_row(transaction)
-    "#{format_time(transaction.date)} || #{format(transaction.credit)}|| #{format(transaction.debit)}|| #{format(transaction.balance)}"
+    "#{format_time(transaction.date)} || #{format(transaction.credit)}|| #{format(transaction.debit)}|| #{format_balance(transaction.balance)}"
   end
 
   def format_time(date)
@@ -11,7 +11,7 @@ class Printer
 
   def format_statement(transaction_history)
     header = "date || credit || debit || balance\n"
-    statementRows = transaction_history.reverse.map do |transaction|
+    statementRows = transaction_history.sort_by(&:date).reverse.map do |transaction|
       format_row(transaction)
     end
 
@@ -22,6 +22,10 @@ class Printer
 
   def format(item)
     sprintf('%.2f ', item) if item
+  end
+
+  def format_balance(item)
+    sprintf('%.2f', item) if item
   end
   
 end
