@@ -16,15 +16,15 @@ class Account
   def deposit(amount)
     @balance += amount
     add_deposit_transaction(credit:amount, balance: @balance)
-    "#{amount} is deposited. Current balance: #{@balance}"
+    print_deposit_message(amount, @balance)
   end
 
   def withdraw(amount)
     raise 'Insufficient funds' if @balance < amount
 
     @balance -= amount
-    add_withdraw_transaction(debit: amount, balance: @balance) 
-    "#{amount} is withdrawn. Current balance: #{@balance}"
+    add_withdraw_transaction(debit: amount, balance: @balance)
+    print_withdraw_message(amount, @balance)
   end
 
   def statement
@@ -40,4 +40,12 @@ class Account
   def add_withdraw_transaction(debit: nil, balance: nil) 
     @transaction_history.unshift(@transaction_class.new(debit: debit, balance: balance))
   end 
+
+  def print_deposit_message(amount, balance)
+    "#{amount} is deposited. Current balance: #{@balance}"
+  end
+  
+  def print_withdraw_message(amount, balance)
+  "#{amount} is withdrawn. Current balance: #{@balance}"
+  end
 end
