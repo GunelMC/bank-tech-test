@@ -19,14 +19,20 @@ describe Transaction do
       expect(subject.show).to eq("#{date} ||  ||  ||  ")
     end
 
-    it 'shows credit as its second column' do
+    it 'shows credit in its second column' do
       transaction = Transaction.new(credit: 100) 
       expect(transaction.show).to eq("#{date} || 100 ||  ||  ")
     end
 
-    it 'shows debit as its third column' do
+    it 'shows debit in its third column' do
       transaction = Transaction.new(debit: 100) 
       expect(transaction.show).to eq("#{date} ||  || 100 ||  ")
     end
+
+    it 'shows balance in its fourth column' do
+      transaction = Transaction.new(balance: 100) 
+      expect(transaction.show).to eq("#{date} ||  ||  || 100 ")
+    end
+
   end
 end
