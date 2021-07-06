@@ -1,7 +1,7 @@
 require 'printer'
 
 describe Printer do
-  let(:transaction) { double(:transaction, date: "15/03/2021", credit:300, debit: 100, balance: 200) }
+  let(:transaction) { double(:transaction, date: Time.new(2021, 03, 15), credit:300, debit: 100, balance: 200) }
 
   describe '.format_row' do 
     it "formats the transaction row" do
@@ -9,8 +9,7 @@ describe Printer do
     end
 
     it "formats the transaction time" do
-      date = Time.new(2021, 03, 15)
-      expect(subject.format_time(date)).to eq "15/03/2021"
+      expect(subject.format_time(transaction.date)).to eq "15/03/2021"
     end
 
   end  

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+require_relative "./printer.rb"
 
 class Transaction
   attr_reader :date, :credit
 
-  def initialize(date: Time.now, credit: nil, debit:nil, balance:nil, formatter:nil)
+  def initialize(date: Time.now, credit: nil, debit:nil, balance:nil, formatter: Printer.new)
     @date = date
     @credit = credit
     @debit = debit
@@ -12,17 +13,7 @@ class Transaction
   end
 
   def show
-    "#{format_time} || #{format(@credit)} || #{format(@debit)} || #{@balance} "
+    @formatter.format_row(self)
   end
-
-  private
-
-  def format(item)
-    "#{item}" if item
-  end 
-
-  def format_time()
-    @date.strftime('%d/%m/%Y')
-  end 
 
 end
