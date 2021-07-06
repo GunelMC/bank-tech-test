@@ -61,4 +61,14 @@ describe Account do
       subject.withdraw(100)
     end
   end
+
+  describe '.statement' do
+    it "calls transaction.show method" do
+      subject.deposit(100)
+      expect(transaction_double).to receive(:show).exactly(1).time
+      subject.statement
+    end 
+
+  end
+
 end

@@ -20,4 +20,10 @@ class Account
     @balance -= amount
     @transaction_history.unshift(@transaction_class.new(debit: amount, balance: @balance))
   end
+
+  def statement
+    @transaction_history.map do |transaction|
+      transaction.show
+    end 
+  end
 end
