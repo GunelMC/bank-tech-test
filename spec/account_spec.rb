@@ -15,7 +15,6 @@ describe Account do
   end
 
   it 'initializes a new account with an empty transaction history' do
-    # this is testing state rather than behaviour for simplicity
     expect(subject.transaction_history).to eq []
   end
 
