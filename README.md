@@ -150,12 +150,12 @@ I want the statement transactions to be ordered chronologically from the latest 
 | Attributes | balance, transaction_class, transaction_history, formatter | date, debit, credit, balance, formatter | |
 | Methods | deposit, withdraw, statement | show | format_row, format_time, format_statement |
 
-* I planned classes based on nouns in my user stories. They are: account, transaction (which summarises deposit and withdrawals), printer. 
+* Classes are defined based on nouns in user stories. They are: Account, Transaction (which summarises deposit and withdrawals), and Printer. 
 * Account class creates new instances of Transaction when user makes a deposit or a withdrawal. Account stores balance and transaction history. Account also has formatter, which is Printer class injected to it, to delegate formatting and printing of the statement method. 
-* Also, initially I was testing state of @balance rather than behaviour. Reworked tests to test whether deposit and withdraw methods were showing expected behaviour (apart from changing the balance): whether they were adding debit or credit transaction into Account's transaction history.
-* I refactored Account's deposit and withdraw methods extracting logic using private helper methods.
+* Initially, tests were testing state of @balance rather than behaviour. Reworked tests to test whether deposit and withdraw methods were showing expected behaviour (apart from changing the balance): whether they were adding debit or credit transaction into Account's transaction history.
+* Refactored Account's deposit and withdraw methods extracting logic using private helper methods.
 * Transaction class stores information about date (defaults to Time.now if no value is given), debit amount, credit amount, and resulting balance. The latter three attributes default to nil if no value is given. 
-* Printer class is injected into Account class to enable account class to delegate formatting and printing statement. Printer instance is initialised in Transaction class to format/print a new row of transaction with date, credit, debit and balance as a new row.
+* Printer instance is injected into Account class to enable account class to delegate formatting and printing statement. It is also initialised in Transaction class to format/print a new row of transaction with date, credit, debit and balance as a new row.
 * All unit tests are isolated using mocks and doubles. Time.now is stubbed to control randomness. 
 * Each RGR cycle is committed using frequent commits and descriptive commit messages. 
 * Included an integration test to test functionality of the entire program. 
